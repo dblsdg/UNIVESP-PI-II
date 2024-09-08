@@ -1,0 +1,138 @@
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Contato</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="../static/images/woman-icon.png">
+        <!-- CSS FILES -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static '/css/bootstrap.icons.css' %}">
+        <link rel="stylesheet" href="{% static '/css/contato.css' %}">
+    </head>
+    <body class="topics-listing-page" id="top">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <span>Tammy Espaço de Beleza</span>
+            </div>
+            <div class="navbar-link">
+                <a href="/">Início</a>
+                <a href="/sobre">Sobre</a>
+                <a href="/serviços">Serviços</a>
+                <!--a href="/agendar">Agendar</a-->
+                <a href="/contato">Contato</a>
+                <button type="button" class="btn-login" onclick="window.location.href='/login';">Login</button>
+            </div>
+        </nav>
+        <!-- Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-12 text-center">
+                        <h2>Contato</h2>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-12 mt-3 mx-auto">
+                                <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5 info">
+                                    <div class="d-flex">
+                                        <div class="container-md">
+                                            <h3 class="mb-4">Venha nos fazer uma visita</h3>
+                                            <div class="address-info">
+                                                <p class="text-left">
+                                                    <span>Av. Manoel dos Santos Braga, 859</span>
+                                                </p>
+                                                <p class="text-left">
+                                                    <span>São Paulo, SP 03807-320</span>
+                                                </p>
+                                                <p class="text-left">
+                                                    <span style="font-weight: bold">Email: </span>
+                                                    <a data-auto-recognition="true" href="mailto:info@meusite.com" class="">info@meusite.com</a>
+                                                </p>
+                                                <p class="text-left">
+                                                    <span>
+                                                        <span style="font-weight: bold">Tel: </span>(11) 99780-8623
+                                                    </span>
+                                                </p>
+                                                <p class="text-left">
+                                                    <span>
+                                                        <span style="font-weight: bold">Segunda a Sexta-feira: </span>9h às 18h
+                                                    </span>
+                                                </p>
+                                                <p class="text-left">
+                                                    <span>
+                                                        <span style="font-weight: bold">Sábado: </span>11h às 20h
+                                                    </span>
+                                                </p>
+                                                <p class="text-left">
+                                                    <span>
+                                                        <span style="font-weight: bold">Domingo: </span>13h às 17h
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5 form">
+                                    <div class="d-flex">
+                                        <div class="container-md">
+                                            <h3 class="mb-4">Fale com a gente</h3>
+                                            {% bootstrap_messages %}
+                                            <form action="{% url 'contato' %}" method="post" class="" autocomplete="off">
+                                                {% csrf_token %}
+                                                {% bootstrap_form form %}
+                                                {% buttons %}
+                                                    <button type="submit" class="btn-submit-form">Enviar Mensagem</button>
+                                                {% endbuttons %}
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="google-maps">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.751570220601!2d-46.472880925715934!3d-23.50545605953865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce611a2affa549%3A0xa026881761cdf4c1!2sAv.%20Manoel%20dos%20Santos%20Braga%2C%20859%20-%20Vila%20Robertina%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003807-320!5e0!3m2!1spt-BR!2sbr!4v1725632294842!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+        <!-- Footer -->
+        <footer>
+            <div class="footer">
+                <h1 class="footer-logo">Tammy Espaço de Beleza</h1>
+                <p class="text-center">©2024 Tammy Espaço de Beleza. Todos os direitos reservados.</p>
+                <p class="text-center">Av. Manoel dos Santos Braga, 859 - Vila Robertina, CEP: 03807-320 - São Paulo, SP.</p>
+            </div>
+        </footer>
+        <div class="ghost-contact-us-social d-flex flex-column align-items-end justify-content-start">
+            <ul class="d-flex flex-column align-items-end justify-content-start">
+                <li>
+                    <a target="_self" href="/contato">
+                        <span class="icon" style="background-color: #31353d">
+                            <i class="bi--envelope-fill"></i>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://api.whatsapp.com/send?phone=5511997808623">
+                        <span class="icon">
+                            <i class="bi--whatsapp"></i>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- JAVASCRIPT FILES -->
+        {% bootstrap_javascript jquery='full' %}
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/click-scroll.js"></script>
+        <script src="js/custom.js"></script>
+    </body>
+</html>

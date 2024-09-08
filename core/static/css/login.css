@@ -1,0 +1,170 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    background-color: #f2f0ef;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.7em;
+    text-align: left;
+    margin-top: 8px;
+    color: #31353d;
+}
+
+a {
+    font-size: 0.9em;
+    color: #b56f62;
+    text-decoration: none;
+}
+
+h1 {
+    font-weight: 600;
+    padding: 6px;
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #31353d;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left;
+    text-transform: uppercase;
+    color: #31353d;
+    padding: 6px;
+}
+
+.navbar {
+    display: flex !important;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100px;
+    background-color: #31353d;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-logo {
+    display: flex !important;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 36px;
+    color: #ffffff;
+}
+
+.navbar-link {
+    float: right;
+    display: block;
+    flex: 70%;
+    text-align: right;
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 36px;
+    text-decoration: none;
+}
+
+.navbar-link a {
+    font-size: 16px;
+    text-align: center;
+    line-height: 34px;
+    color: #ffffff;
+    display: inline-block;
+    padding: 14px 16px;
+    transition: all linear 190ms;
+    text-decoration: none;
+}
+
+.navbar-link a:hover {
+    color: #f0a89c; !important;
+}
+
+.bg-white {
+    border-radius: 12px;
+    width: 365px;
+    height: auto;
+    padding: 8px;
+    margin-top: 120px;
+}
+
+.mb-4 {
+    margin: 8px 0 !important;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label {
+    display: none;
+}
+
+.fields {
+    width: 320px;
+    font-size: 16px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    transition: all linear 190ms;
+    color: #31353d;
+    margin-bottom: 18px;
+    outline: none;
+    outline: none;
+}
+
+.fields:focus {
+    border-color: #f0a89c;
+}
+
+.text-left {
+    text-align: left;
+    padding: 0 6px;
+}
+
+.btn-access {
+    width: 98%;
+    height: auto;
+    padding: 12px;
+    color: #31353d;
+    border: none;
+    border-radius: 7px;
+    background-color: #f0a89c;
+    cursor: pointer;
+    transition: all linear 190ms;
+}
+
+btn-access:hover {
+    background-color: #fcbcb2;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    background-color: #f0a89c;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 23px;
+    font-weight: 600;
+    padding: 12px;
+    color: #31353d;
+}

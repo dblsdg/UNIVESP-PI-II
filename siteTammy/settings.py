@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
+import django_heroku
 
 from django.contrib import staticfiles
 from django.core.management import templates
@@ -28,7 +29,7 @@ SECRET_KEY = 'django-insecure-rn(a!#9=*%bq0hdtr9vw$$043q@yv8=gps5i!=ihce0ay(x@gc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['https://django-django2-1e04e0032691.herokuapp.com']
 
 
 # Application definition
@@ -122,9 +123,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-MEDIA_URL = 'media/'
+STATICFILES_DIRS = [
+    BASE_DIR / "core/static",
+]
+
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
@@ -141,3 +146,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_PORT = 587 conexão segura normalmente é 587, seu host vai informar quais são os dados.
 # EMAIL_USER_TSL = True se vai usar criptografia ou não
 # EMAIL_HOST_PASSWORD = 'sua senha' qual a senha do e-mail do reply
+
+API_URL = "http://localhost:33333"
+
+django_heroku.settings(locals())

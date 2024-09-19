@@ -166,7 +166,7 @@
                 removeIdx = i;
             }
           }
-          if(removeIdx != -1) {
+          if (removeIdx != -1) {
             unstickyElement.unwrap();
             unstickyElement
               .css({
